@@ -1,13 +1,9 @@
 {% include base_path %}
 
-{% if page.author and site.data.authors[page.author] %}
-  {% assign author = site.data.authors[page.author] %}{% else %}{% assign author = site.author %}
-{% endif %}
-
 <p><b>Distributed haptic systems</b></p>
 <div class="bio-container">
 	<div class="bio-item1">
-    <img src="{{ author.avatar | prepend: "/images/" | prepend: base_path }}" class="author__avatar" alt="{{ author.name }}">
+    <img src="{{ "Asset 6.png" | prepend: "/images/" | prepend: base_path }}" class="author__avatar" alt="{{ author.name }}">
     </div>
   <div class="bio-item2">
 		
@@ -18,7 +14,7 @@
 <p><b>Distributed haptic systems</b></p>
 <div class="bio-container">
 	<div class="bio-item1">
-    <img src="{{ author.avatar | prepend: "/images/" | prepend: base_path }}" class="author__avatar" alt="{{ author.name }}">
+    <img src="{{ "Asset 7.png" | prepend: "/images/" | prepend: base_path }}" class="author__avatar" alt="{{ author.name }}">
     </div>
   <div class="bio-item2">
 		
@@ -29,7 +25,7 @@
 <p><b>Distributed haptic systems</b></p>
 <div class="bio-container">
 	<div class="bio-item1">
-    <img src="{{ author.avatar | prepend: "/images/" | prepend: base_path }}" class="author__avatar" alt="{{ author.name }}">
+    <img src="{{ "Asset 9.png" | prepend: "/images/" | prepend: base_path }}" class="author__avatar" alt="{{ author.name }}">
     </div>
   <div class="bio-item2">
 		
