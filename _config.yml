@@ -7,7 +7,7 @@
 
 # Site Settings
 locale                   : "en-US"
-title                    : "Matthew T. Flavin, Ph.D."
+title                    : "Matthew Flavin"
 title_separator          : "-"
 name                     : &name "Matthew Flavin"
 description              : &description "Postdoctoral researcher in bioelectronics and neuroengineering"
@@ -80,7 +80,7 @@ analytics:
 
 # Site Author
 author:
-  name             : "Your Sidebar Name"
+  name             : "Matthew T. Flavin, Ph.D."
   avatar           : "IMG_2118.jpg"
   bio              : "Postdoctoral researcher developing bioelectronics and neural interface technologies."
   location         : "Chicago, IL"
@@ -102,7 +102,7 @@ author:
   instagram        :
   impactstory      : #"https://profiles.impactstory.org/u/xxxx-xxxx-xxxx-xxxx"
   lastfm           :
-  linkedin         : "https://www.linkedin.com/in/matthew-flavin-a6b52250"
+  linkedin         : "matthew-flavin-a6b52250"
   orcid            : "http://orcid.org/0000-0001-6636-0445"
   pinterest        :
   soundcloud       :
