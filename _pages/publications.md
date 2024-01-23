@@ -13,7 +13,12 @@ author_profile: true
 {% endif %}
 
 {% include base_path %}
+## Under review/preparation
+{% for post in site.preparation reversed %}
+  {% include archive-single.html %}
+{% endfor %}
 
+## Peer-reviewed journal publications
 {% for post in site.publications reversed %}
   {% include archive-single.html %}
 {% endfor %}
