@@ -1,7 +1,7 @@
 ---
 title: "The effects of augmented reality use on mathematics achievement of K–12 students: A meta-analysis"
-collection: publications
-permalink: /publication/2023-IJSME
+collection: preparation
+permalink: /preparation/2023-IJSME
 date: 2023-10-01
 venue: 'International Journal of Science and Mathematics Education'
 paperurl: ''
