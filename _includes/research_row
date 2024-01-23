@@ -1,6 +1,6 @@
 {% include base_path %}
 
-<p><b>Distributed haptic systems</b></p>
+<h2>Distributed haptic systems</h2>
 <div class="bio-container">
 	<div class="bio-item1">
     <img src="{{ "Asset 6.png" | prepend: "/images/" | prepend: base_path }}"  alt="Distributed haptics">
@@ -11,7 +11,7 @@
 	</div>
 
 </div>
-<p><b>Intelligent systems for wearable therapeutics</b></p>
+<h2>Intelligent systems for wearable therapeutics</h2>
 <div class="bio-container">
 	<div class="bio-item1">
     <img src="{{ "Asset 7.png" | prepend: "/images/" | prepend: base_path }}" alt="Distributed haptics">
@@ -22,7 +22,7 @@
 	</div>
 
 </div>
-<p><b>Selective peripheral neuro-modulation with iontronic materials</b></p>
+<h2>Selective peripheral neuro-modulation with iontronic materials</h2>
 <div class="bio-container">
 	<div class="bio-item1">
     <img src="{{ "Asset 9.png" | prepend: "/images/" | prepend: base_path }}" alt="Distributed haptics">
