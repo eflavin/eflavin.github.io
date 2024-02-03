@@ -25,7 +25,7 @@ A list of all the posts and pages found on the site ([XML version]({{ base_path 
   {% endif %}
 {% endunless %}
 {% for post in collection.docs %}
-  {% unless collection.output == false or collection.label == "posts" %}
+  {% unless collection.output == false or collection.label == "posts"  or collection.label == "preparation" %}
   {% include archive-single.html %}
   {% endunless %}
 {% endfor %}
