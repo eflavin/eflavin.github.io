@@ -101,25 +101,28 @@
   <link rel="next" href="{{ paginator.next_page_path | prepend: seo_url }}">
 {% endif %}
 
-{% if site.og_image %}
-  <script type="application/ld+json">
-    {
-      "@context": "http://schema.org",
-      "@type": "Organization",
-      "url": {{ seo_url | jsonify }},
-      "logo": {{ site.og_image | prepend: "/images/" | prepend: base_path | jsonify }}
-    }
-  </script>
-{% endif %}
 
 {% if site.social %}
   <script type="application/ld+json">
     {
       "@context" : "http://schema.org",
-      "@type" : "{% if site.social.type %}{{ site.social.type }}{% else %}Person{% endif %}",
-      "name" : "{{ site.social.name | default: site.name }}",
-      "url" : {{ seo_url | jsonify }},
-      "sameAs" : {{ site.social.links | jsonify }}
+      "@type" : "ProfilePage",     
+      "dateCreated" : "2024-02-03T23:18:49+0000",
+      "dateModified" : "2024-02-03T23:18:49+0000",
+      "mainEntity": {
+          "@type": "Person",
+          "name" : "{{ site.social.name | default: site.name }}",
+          "alternateName" : "Matt Flavin",
+          "image" : "{{ author.avatar | prepend: "/images/" | prepend: base_path }}",
+          "description" : "{{ author.bio }}",
+          "sameAs" : [
+              "{{ author.orcid }}",
+              "{{ author.googlescholar }}",
+              "https://www.linkedin.com/in/{{ author.linkedin }}",
+              "https://twitter.com/{{ author.twitter }}",
+          ],
+      },
+      
     }
   </script>
 {% endif %}
