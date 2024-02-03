@@ -1,6 +1,9 @@
 {% include base_path %}
 
 <!-- begin SEO -->
+{% if page.author and site.data.authors[page.author] %}
+  {% assign author = site.data.authors[page.author] %}{% else %}{% assign author = site.author %}
+{% endif %}
 {% if site.url %}
   {% assign seo_url = site.url | append: site.baseurl %}
 {% endif %}
@@ -105,7 +108,7 @@
 {% if site.social %}
   <script type="application/ld+json">
     {
-      "@context" : "http://schema.org",
+      "@context" : "https://schema.org",
       "@type" : "ProfilePage",     
       "dateCreated" : "2024-02-03T23:18:49+0000",
       "dateModified" : "2024-02-03T23:18:49+0000",
@@ -119,9 +122,9 @@
               "{{ author.orcid }}",
               "{{ author.googlescholar }}",
               "https://www.linkedin.com/in/{{ author.linkedin }}",
-              "https://twitter.com/{{ author.twitter }}",
-          ],
-      },
+              "https://twitter.com/{{ author.twitter }}"
+          ]
+      }
       
     }
   </script>
