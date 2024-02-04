@@ -179,8 +179,8 @@ collections:
     output: true
     permalink: /:collection/:path/
   preparation:
-    output: true
-    permalink: /:collection/:path/
+    output: false
+    permalink: ""
 
 # Defaults
 defaults:
