@@ -57,6 +57,7 @@
 
 {% if site.twitter.username %}
   <meta name="twitter:site" content="@{{ site.twitter.username | replace: "@", "" }}">
+  <meta name="twitter:creator" content="@{{ site.twitter.username | replace: "@", "" }}">
   <meta name="twitter:title" content="{{ page.title | default: site.title | markdownify | strip_html | strip_newlines | escape_once }}">
   <meta name="twitter:description" content="{{ seo_description }}">
   <meta name="twitter:url" content="{{ canonical_url }}">
@@ -111,7 +112,7 @@
       "@context" : "https://schema.org",
       "@type" : "ProfilePage",     
       "dateCreated" : "2024-02-03T23:18:49+0000",
-      "dateModified" : "2024-02-03T23:19:00+0000",
+      "dateModified" : {{ site.time }},
       "mainEntity": {
           "@type": "Person",
           "name" : "{{ site.social.name | default: site.name }}",
