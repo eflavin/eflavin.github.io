@@ -105,13 +105,13 @@
 {% endif %}
 
 
-{% if site.social %}
+{% if page.excerpt == "About me" %}
   <script type="application/ld+json">
     {
       "@context" : "https://schema.org",
       "@type" : "ProfilePage",     
       "dateCreated" : "2024-02-03T23:18:49+0000",
-      "dateModified" : "2024-02-03T23:18:49+0000",
+      "dateModified" : "{{ page.date }}",
       "mainEntity": {
           "@type": "Person",
           "name" : "{{ site.social.name | default: site.name }}",
