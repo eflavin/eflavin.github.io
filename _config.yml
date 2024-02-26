@@ -59,12 +59,12 @@ yandex_site_verification :
 
 # Social Sharing
 twitter:
-  username               : "MattTFlavin"
+  username               : "ProfessorFlavin"
 facebook:
   username               :
   app_id                 :
   publisher              :
-og_image                 :  profile.png?v=2 # Open Graph/Twitter default site image
+og_image                 :  Photo_EF.jpg?v=2 # Open Graph/Twitter default site image
 # For specifying social profiles
 # - https://developers.google.com/structured-data/customize/social-profiles
 social:
@@ -82,14 +82,14 @@ analytics:
 
 # Site Author
 author:
-  name             : "Matthew T. Flavin, Ph.D."
-  avatar           : "IMG_2118.jpg"
-  bio              : "Postdoctoral researcher developing bioelectronics and neural interface technologies"
-  location         : "Chicago, IL"
+  name             : "Eunhye Flavin, Ph.D."
+  avatar           : "Photo_EF.jpg"
+  bio              : "Assistant professor designing technologies and tools for mathematics education"
+  location         : "Boston, MA"
   employer         :
   pubmed           : # "https://www.ncbi.nlm.nih.gov/pubmed/?term=john+snow"
-  googlescholar    : "https://scholar.google.com/citations?user=3VgPQZoAAAAJ"
-  email            : "matthew.flavin@northwestern.edu"
+  googlescholar    : "https://scholar.google.com/citations?user=0i8OZ8IAAAAJ&hl=en&oi=ao"
+  email            : "eflavin@stonehill.edu"
   researchgate     :  # example: "https://www.researchgate.net/profile/yourprofile"
   uri              :
   bitbucket        :
@@ -98,20 +98,20 @@ author:
   flickr           :
   facebook         :
   foursquare       :
-  github           : "mflav"
+  github           : "eflavin"
   google_plus      :
   keybase          :
   instagram        :
   impactstory      : #"https://profiles.impactstory.org/u/xxxx-xxxx-xxxx-xxxx"
   lastfm           :
-  linkedin         : "matthew-flavin-a6b52250"
-  orcid            : "https://orcid.org/0000-0001-6636-0445"
+  linkedin         : "eunhye-flavin-ph-d-912a331a2"
+  orcid            : "https://orcid.org/0000-0002-3422-9968"
   pinterest        :
   soundcloud       :
   stackoverflow    : # http://stackoverflow.com/users/123456/username
   steam            :
   tumblr           :
-  twitter          : "MattTFlavin"
+  twitter          : "ProfessorFlavin"
   vine             :
   weibo            :
   xing             :
