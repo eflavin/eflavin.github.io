@@ -11,7 +11,7 @@
 locale                   : "en-US"
 title                    : "Eunhye Flavin"
 title_separator          : "-"
-name                     : &name "Matthew Flavin"
+name                     : &name "Eunhye Flavin"
 description              : &description "Postdoctoral researcher in bioelectronics and neuroengineering"
 url                      : https://flavinresearch.io # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
