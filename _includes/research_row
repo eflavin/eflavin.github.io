@@ -1,36 +1,44 @@
 {% include base_path %}
 
-<h2>Distributed haptic systems</h2>
+<h2>Intelligent systems for embodied learning of mathematics</h2>
 <div class="bio-container">
 	<div class="bio-item1">
     <img src="{{ "Asset 6.png" | prepend: "/images/" | prepend: base_path }}"  alt="Distributed haptics">
     </div>
   <div class="bio-item2">
 		
-		<p>Capabilities for fast, programmable manipulation of human sensory perception have wide-ranging applications in therapeutic biomedical systems, including somatosensory interfaces that substitute or augment missing sensory capabilities. Compared with most wearable electronic devices, haptics interfaces can benefit from wider coverage across the surface of the skin. This research direction will address significant untapped potential in these areas of research by introducing a more expansive concept of somatosensory interfaces, developing a distributed system of textile-encapsulated actuators.</p>
+		<p>The disconnection between mathematical representations (e.g., symbols) and everyday practices poses a significant challenge to children's mathematics learning. Intelligent systems, particularly augmented reality, bridge this gap by allowing users to enhance their real-world view with computer-generated information. Drawing on embodiment and sociocultural paradigms, this research direction aims to develop new augmented reality systems to enhance children’s reasoning about mathematical concepts as well as teachers' roles in these new student-teacher-machine interactions.</p>
 	</div>
 
 </div>
-<h2>Intelligent systems for wearable therapeutics</h2>
+<h2>Artificial intelligence for culturally responsive teaching</h2>
 <div class="bio-container">
 	<div class="bio-item1">
     <img src="{{ "Asset 7.png" | prepend: "/images/" | prepend: base_path }}" alt="Distributed haptics">
     </div>
   <div class="bio-item2">
 		
-		<p>Pain control and management in humans is an unresolved problem with significant medical, societal, and economical implications. Targeted drug therapies, such as opioid painkillers, are highly effective in pain control—however, repeated, long-term, systemic administration poses many long-term risks, including addiction and de-sensitization. This research direction will aim to develop non-invasive, non-addictive interventions for pain management. This will focus on targeting specific sources of pain emanating from muscle tightness in the neck and back using an intelligent system of sensors and actuators.</p>
+		<p>While artificial intelligence has often been positioned as antagonistic to mathematics education, I believe that generative machine learning tools can unlock huge breakthroughs in the field. With this principle, my group is investigating artificial intelligence as a tool for helping mathematics teacher and teacher candidates develop competence in culturally relevant teaching. This research direction will develop fine-tuned generative AI-based chatbots that allows teacher candidates to practice culturally and linguistically relevant teaching skills within mathematics teaching scenarios.</p>
 	</div>
 
 </div>
-<h2>Selective peripheral neuro-modulation with iontronic materials</h2>
+<h2>Teaching and learning mathematics through a justice lens</h2>
 <div class="bio-container">
 	<div class="bio-item1">
     <img src="{{ "Asset 9.png" | prepend: "/images/" | prepend: base_path }}" alt="Distributed haptics">
     </div>
   <div class="bio-item2">
 		
-		<p>Developing effective means of interfacing with neural tissue is one of the major scientific challenges of our time. While haptic interfaces offer a powerful means of delivering information to afferent channels, motor activation requires a different approach. This research direction will apply ion-concentration modulation with ion-selective membranes, leveraging both the intrinsic selectivity of chemical modulation and the spatiotemporal resolution of direct electrical stimulation. These principles establish the basis for an electrochemical system that sources ions as therapeutic stock from the surrounding physiological media, regenerating them in situ, for the purposes of continuous neuromodulation.</p>
+		<p>This direction aims to help students develop mathematical knowledge in ways that enable them to relate to the curriculum and empower them. I view teaching and learning mathematics as a tool to promote collective well-being. This research direction involves creating curriculum, tasks, professional development materials and collaborating with diverse stakeholders. Additionally, it includes a study on preparing teacher candidates for such pedagogical knowledge and practices at the intersection of justice, mathematics education, and equitable use of technology.</p>
 	</div>
 
 </div>
-
+<h2>Schooling experiences of immigrant families and communities</h2>
+<div class="bio-container">
+	<div class="bio-item1">
+    <img src="{{ "Asset 9.png" | prepend: "/images/" | prepend: base_path }}" alt="Distributed haptics">
+    </div>
+  <div class="bio-item2">
+		
+		<p>One in four children in the U.S. has at least one immigrant parent. Their schooling experiences unfold within social, material, and historical contexts, alongside out-of-school learning arrangements. Over a decade, I have collaborated with multiple sites (including K-12 schools, bilingual programs, non-profits, and churches) to harness the local values and practices of immigrant families and communities in shaping socially and ethically just learning theories and practices. This research direction will continue to utilize interdisciplinary methodologies, such as natural language processing, survey methods, and ethnography, to offer practical and policy-level suggestions.</p>
+	</div>
