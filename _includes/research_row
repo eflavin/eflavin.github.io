@@ -3,7 +3,7 @@
 <h2>Intelligent systems for embodied learning of mathematics</h2>
 <div class="bio-container">
 	<div class="bio-item1">
-    <img src="{{ "Asset 6.png" | prepend: "/images/" | prepend: base_path }}"  alt="Distributed haptics">
+    <img src="{{ "direction 1.jpg" | prepend: "/images/" | prepend: base_path }}"  alt="Distributed haptics">
     </div>
   <div class="bio-item2">
 		
@@ -14,7 +14,7 @@
 <h2>Artificial intelligence for culturally responsive teaching</h2>
 <div class="bio-container">
 	<div class="bio-item1">
-    <img src="{{ "Asset 7.png" | prepend: "/images/" | prepend: base_path }}" alt="Distributed haptics">
+    <img src="{{ "direction2.png" | prepend: "/images/" | prepend: base_path }}" alt="Distributed haptics">
     </div>
   <div class="bio-item2">
 		
@@ -25,7 +25,11 @@
 <h2>Teaching and learning mathematics through a justice lens</h2>
 <div class="bio-container">
 	<div class="bio-item1">
-    <img src="{{ "Asset 9.png" | prepend: "/images/" | prepend: base_path }}" alt="Distributed haptics">
+<video playsinline="" preload="none" muted="" loop="" poster="img/direction 3.jpg" autoplay="">
+		
+				<source src="{{ "grace_house2.mp4" | prepend: "/images/" | prepend: base_path }}" type="video/mp4">
+			</video>
+   
     </div>
   <div class="bio-item2">
 		
@@ -36,7 +40,7 @@
 <h2>Schooling experiences of immigrant families and communities</h2>
 <div class="bio-container">
 	<div class="bio-item1">
-    <img src="{{ "Asset 9.png" | prepend: "/images/" | prepend: base_path }}" alt="Distributed haptics">
+    <img src="{{ "G4.jpg" | prepend: "/images/" | prepend: base_path }}" alt="Distributed haptics">
     </div>
   <div class="bio-item2">
 		
