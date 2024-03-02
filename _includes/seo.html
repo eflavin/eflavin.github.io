@@ -107,6 +107,15 @@
 
 
 {% if page.excerpt == "About me" %}
+ <script type="application/ld+json">
+  {
+  "@context" : "http://schema.org",
+  "@type" : "WebSite",
+  "name" : "Eunhye Flavin",
+  "alternateName" : [],
+  "url" : "https://flavineducationlab.com"
+  }
+  </script>
   <script type="application/ld+json">
     {
       "@context" : "https://schema.org",
@@ -116,7 +125,7 @@
       "mainEntity": {
           "@type": "Person",
           "name" : "{{ site.social.name | default: site.name }}",
-          "alternateName" : "Matt Flavin",
+          "alternateName" : "Grace Flavin",
           "image" : "{{ author.avatar | prepend: "/images/" | prepend: base_path }}",
           "description" : "{{ author.bio }}",
           "sameAs" : [

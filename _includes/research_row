@@ -25,7 +25,7 @@
 <h2>Teaching and learning mathematics through a justice lens</h2>
 <div class="bio-container">
 	<div class="bio-item1">
-<video playsinline="" preload="none" muted="" loop="" poster="img/direction 3.jpg" autoplay="">
+<video playsinline="" preload="none" muted="" loop="" poster="img/direction 3.jpg" autoplay="" height="358px">
 		
 				<source src="{{ "grace_house2.mp4" | prepend: "/images/" | prepend: base_path }}" type="video/mp4">
 			</video>
