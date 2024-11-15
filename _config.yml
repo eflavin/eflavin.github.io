@@ -84,12 +84,12 @@ analytics:
 author:
   name             : "Eunhye Flavin, Ph.D."
   avatar           : "Photo_EF.jpg"
-  bio              : "Assistant professor designing technologies and tools for mathematics education"
-  location         : "Boston, MA"
+  bio              : "Senior Research Scientist at Georgia Tech designing technologies and tools for mathematics education"
+  location         : "Atlanta, GA"
   employer         :
   pubmed           : # "https://www.ncbi.nlm.nih.gov/pubmed/?term=john+snow"
   googlescholar    : "https://scholar.google.com/citations?user=0i8OZ8IAAAAJ&hl=en&oi=ao"
-  email            : "eflavin@stonehill.edu"
+  email            : "eflavin@gatech.edu"
   researchgate     :  # example: "https://www.researchgate.net/profile/yourprofile"
   uri              :
   bitbucket        :
@@ -104,7 +104,7 @@ author:
   instagram        :
   impactstory      : #"https://profiles.impactstory.org/u/xxxx-xxxx-xxxx-xxxx"
   lastfm           :
-  linkedin         : "eunhye-flavin-ph-d-912a331a2"
+  linkedin         : "eunhye-grace-flavin-912a331a2"
   orcid            : "https://orcid.org/0000-0002-3422-9968"
   pinterest        :
   soundcloud       :
