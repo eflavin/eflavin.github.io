@@ -1,6 +1,6 @@
 ---
 title: "Developing augmented reality system for embodied mathematics learning"
-collection: preparation
+collection: publications
 permalink: /publication/2024-prep
 date: 2025-03-01
 venue: North American Chapter of the International Group for the Psychology of Mathematics Education
