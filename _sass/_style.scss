@@ -1,0 +1,70 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+.container {
+  display: flex;
+  height: 100vh;        /* Full screen height */
+  align-items: stretch; /* Ensures equal height columns */
+}
+
+.left, .right {
+  width: 50%;
+  padding: 20px;
+  box-sizing: border-box;
+  overflow-y: auto;
+}
+
+.left {
+  background-color: #f0f0f0;
+}
+
+.right {
+  background-color: #e9f5ff;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+ol li {
+  margin-bottom: 10px;  /* Adjust number for more or less spacing */
+  line-height: 1.2;     /* Optional: makes the sentence easier to read */
+}
+
+#chatbox {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+#messages {
+  flex-grow: 1;
+  overflow-y: auto;
+  background: #fff;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+}
+
+textarea {
+  width: 100%;
+  height: 60px;
+  resize: none;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+button {
+  margin-top: 10px;
+  padding: 10px;
+  cursor: pointer;
+}
+
+canvas {
+  border: 2px solid #999;
+  background-color: #fff;
+  width: 100%;
+  height: 400px;
+  touch-action: none;
+}

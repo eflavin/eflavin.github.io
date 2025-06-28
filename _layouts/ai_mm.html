@@ -1,0 +1,57 @@
+---
+layout: default
+---
+
+{% if page.header.overlay_color or page.header.overlay_image or page.header.image %}
+  {% include page__hero.html %}
+{% endif %}
+
+{% if page.url != "/" and site.breadcrumbs %}
+  {% unless paginator %}
+    {% include breadcrumbs.html %}
+  {% endunless %}
+{% endif %}
+<div class="ai_mm
+ <div class="container">
+
+    <!-- LEFT COLUMN -->
+    <div class="left">
+      <h2>What is Mathematical Modeling?</h2>
+      <p>
+        Mathematical modeling is the process of using mathematics to represent, analyze, and solve problems from the real world.
+        It often has five phases:
+      </p>
+      <ol>
+        <li><strong>Understanding the problem:</strong> Determining the givens and goals</li>
+        <li><strong>Simplifying the problem:</strong> Identifying the necessary variables and making realistic assumptions</li>
+        <li><strong>Mathematizing:</strong> Constructing the needed mathematical models (e.g., equations, functions, graphs)</li>
+        <li><strong>Working mathematically:</strong> Achieving the correct mathematical solution by solving the constructed models</li>
+        <li><strong>Interpreting:</strong> Interpreting the obtained mathematical solution in a real-life context</li>
+        <li><strong>Validating:</strong> Validating and correcting any mistakes</li>
+      </ol>
+
+      <h3>Draw Your Ideas</h3>
+      <div class="whiteboard-container">
+        <div class="toolbar">
+          <button id="penButton" class="tool">Pen</button>
+          <button id="eraserButton" class="tool">Eraser</button>
+          <input type="color" id="colorPicker" class="tool" value="#000000">
+          <input type="range" id="brushSize" min="1" max="20" value="5" class="tool">
+          <button id="clearButton" class="tool clear-btn">Clear</button>
+        </div>
+        <canvas id="whiteboard"></canvas>
+      </div>
+    </div>
+
+    <!-- RIGHT COLUMN -->
+    <div class="right">
+      <h2>AI Agent for Mathematical Modeling</h2>
+      <iframe
+      src="https://udify.app/chatbot/hmiSiym0AdrtAYhs"
+      style="width: 100%; height: 100%; min-height: 700px"
+      frameborder="0"
+      allow="microphone">
+    </iframe>
+  </div> <!-- closes .container -->
+</div>
+  <script src="{{ base_path }}/assets/js/script.js"></script>
