@@ -1,6 +1,6 @@
 ---
 permalink: /
-title: "Technology-integrated mathematics education in school and community"
+title: "Designing technology-integrated learning experiences that support learners of all ages"
 excerpt: "About me"
 author_profile: true
 redirect_from: 
