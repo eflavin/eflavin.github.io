@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>AI + Mathematical Modeling</title>
+
+  <!-- Preconnects & Fonts -->
+  <link rel="preconnect" href="https://udify.app" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    /* ===================
+       GT-style Single File
+       Namespaced under .ai-mm
+       =================== */
+    :root{
+      --card-bg:#fff;
+      --ink:#223;
+      --muted:#5c6b7a;
+      --brand:#003057;      /* Georgia Tech Navy */
+      --accent:#1677ff;
+      --accent-2:#5cc1ff;
+      --surface:#f6f9fc;
+      --border:#e6eef7;
+      --shadow:0 10px 24px rgba(0,48,87,.08), 0 2px 6px rgba(0,48,87,.06);
+    }
+    html,body{height:100%}
+    body{
+      font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial,sans-serif;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      color:var(--ink);
+      background:var(--surface);
+      margin:0;
+      line-height:1.6;
+    }
+    .ai-mm .container{max-width:1024px;margin:0 auto;padding:24px}
+
+    /* HERO */
+    .ai-mm .page-hero{
+      background:linear-gradient(135deg,#f3f8ff,#eef7ff);
+      border:1px solid var(--border);
+      border-radius:16px;
+      padding:40px 28px;
+      box-shadow:var(--shadow);
+      margin-bottom:32px;
+    }
+    .ai-mm .page-hero h1{margin:0 0 6px;font-size:34px;color:var(--brand);font-weight:700}
+    .ai-mm .page-hero .subhead{margin:0;color:var(--muted);font-size:18px}
+
+    /* CARDS */
+    .ai-mm .card{
+      background:var(--card-bg);
+      border:1px solid var(--border);
+      border-radius:16px;
+      padding:28px;
+      box-shadow:var(--shadow);
+      margin-bottom:28px;
+    }
+    .ai-mm .card--padded{padding:32px}
+    .ai-mm .card--accent{position:relative}
+    .ai-mm .card--accent::before{
+      content:"";
+      position:absolute;inset:0 0 auto 0;height:6px;
+      background:linear-gradient(90deg,var(--brand),#B3A369);/* Navy → GT Gold */
+      border-top-left-radius:16px;border-top-right-radius:16px;
+    }
+    .ai-mm h2{margin:0 0 10px;color:var(--brand);font-weight:700}
+    .ai-mm h3{margin:18px 0 8px;color:var(--brand);font-weight:600}
+    .ai-mm .hint{color:var(--muted);font-size:14px;margin:8px 0 0;background:#f3f8ff;border:1px solid var(--border);padding:10px 12px;border-radius:10px}
+
+    /* ICON HEADINGS */
+    .ai-mm .icon-head{display:inline-flex;align-items:center;gap:10px}
+    .ai-mm .icon{font-size:1.1em;line-height:1}
+
+    /* SCENARIOS GRID */
+    .ai-mm .scenarios{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:14px}
+    .ai-mm .scenario{
+      background:#fff;
+      border:1px solid var(--border);
+      border-radius:14px;
+      padding:18px;
+      box-shadow:0 6px 16px rgba(22,119,255,.06);
+      transition:transform .15s ease, box-shadow .15s ease;
+    }
+    .ai-mm .scenario h3{margin:0 0 8px;color:var(--brand)}
+    /* Colored scenario tiles */
+    .ai-mm .scenario--dog{background:#fff7f2;border-color:#ffd9c1}
+    .ai-mm .scenario--dog:hover{transform:translateY(-2px);box-shadow:0 10px 22px rgba(255,140,76,.18)}
+    .ai-mm .scenario--garden{background:#f2fff6;border-color:#c6f0d0}
+    .ai-mm .scenario--garden:hover{transform:translateY(-2px);box-shadow:0 10px 22px rgba(46,204,113,.18)}
+    .ai-mm .scenario--library{background:#f6f5ff;border-color:#ddd7ff}
+    .ai-mm .scenario--library:hover{transform:translateY(-2px);box-shadow:0 10px 22px rgba(130,100,255,.18)}
+    .ai-mm .scenario--traffic{background:#fffaf2;border-color:#ffe3b5}
+    .ai-mm .scenario--traffic:hover{transform:translateY(-2px);box-shadow:0 10px 22px rgba(255,179,0,.18)}
+    @media (max-width:720px){.ai-mm .scenarios{grid-template-columns:1fr}}
+
+    /* DIFY WIDGET FRAME */
+    .ai-mm .widget-frame{
+      background:#fff;
+      border:1px solid var(--border);
+      border-radius:14px;
+      overflow:hidden;
+      box-shadow:var(--shadow);
+      min-height:700px; /* matches iframe min-height */
+    }
+    .ai-mm .widget-frame iframe{display:block;width:100%;height:100%;min-height:700px;border:0}
+
+    /* READ-ALOUD */
+    .ai-mm .tts-textarea{width:100%;min-height:120px;padding:12px;border-radius:12px;border:1px solid var(--border);background:#fafcff}
+    .ai-mm .tts-controls{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin:12px 0}
+    .ai-mm .tts-controls button{background:#0b548c;color:#fff;border:0;padding:10px 14px;border-radius:10px;cursor:pointer}
+    .ai-mm .tts-controls button.secondary{background:#2f4861}
+    .ai-mm .tts-controls button:disabled{opacity:.6;cursor:not-allowed}
+    .ai-mm .tts-controls label{display:inline-flex;align-items:center;gap:6px;font-size:14px;color:var(--muted)}
+    .ai-mm .tts-controls input[type="range"]{width:140px}
+
+    /* PHASES (six-step grid) */
+    .ai-mm .phases{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:14px}
+    .ai-mm .phase{
+      background:#fff;border:1px solid var(--border);border-radius:14px;
+      padding:16px 16px 16px 56px;position:relative;box-shadow:0 6px 16px rgba(0,48,87,.06)
+    }
+    .ai-mm .phase .step{
+      position:absolute;left:14px;top:14px;width:32px;height:32px;border-radius:8px;background:var(--brand);color:#fff;font-weight:700;display:grid;place-items:center;font-size:14px
+    }
+    .ai-mm .phase h3{margin:0 0 6px;color:var(--brand);font-weight:600}
+    .ai-mm .phase p{margin:0;color:var(--muted)}
+    @media (max-width:720px){.ai-mm .phases{grid-template-columns:1fr}}
+
+    /* Distinct step colors */
+    .ai-mm .phase--1 .step{background:#003057;color:#fff}   /* GT Navy */
+    .ai-mm .phase--2 .step{background:#B3A369;color:#111}   /* GT Gold */
+    .ai-mm .phase--3 .step{background:#2F8D46;color:#fff}   /* Green */
+    .ai-mm .phase--4 .step{background:#6E5AA3;color:#fff}   /* Purple */
+    .ai-mm .phase--5 .step{background:#F28C28;color:#111}   /* Orange */
+    .ai-mm .phase--6 .step{background:#C94C4C;color:#fff}   /* Crimson */
+
+    /* Footer */
+    .ai-mm .site-footer{border-top:1px solid var(--border);margin-top:24px}
+    .ai-mm .site-footer p{text-align:center;color:var(--muted);font-size:14px;margin:12px 0 20px}
+  </style>
+</head>
+<body>
+  <main class="ai-mm">
+    <div class="container">
+
+      <!-- HERO -->
+      <section class="page-hero card card--accent">
+        <h1>Mathematical Modeling</h1>
+        <p class="subhead">Explore definitions, talk to an AI tutor, and try real-world scenarios.</p>
+      </section>
+
+      <!-- Section 1: What is mathematical modeling? -->
+      <section class="card card--padded">
+        <h2 class="icon-head"><span class="icon" aria-hidden="true">📘</span><span>What is mathematical modeling?</span></h2>
+        <p>Mathematical modeling is the process of using mathematics to represent, analyze, and solve problems from the real world. It often has six phases:</p>
+
+        <!-- Phases as GT-style cards -->
+        <div class="phases" aria-label="Six phases of mathematical modeling">
+          <div class="phase phase--1">
+            <span class="step" aria-hidden="true">1</span>
+            <h3 class="icon-head"><span class="icon" aria-hidden="true">🔍</span><span>Understanding the problem</span></h3>
+            <p>Determining the givens and goals.</p>
+          </div>
+          <div class="phase phase--2">
+            <span class="step" aria-hidden="true">2</span>
+            <h3 class="icon-head"><span class="icon" aria-hidden="true">✂️</span><span>Simplifying the problem</span></h3>
+            <p>Identifying the necessary variables and making realistic assumptions.</p>
+          </div>
+          <div class="phase phase--3">
+            <span class="step" aria-hidden="true">3</span>
+            <h3 class="icon-head"><span class="icon" aria-hidden="true">∑</span><span>Mathematizing</span></h3>
+            <p>Constructing the needed mathematical models (e.g., equations, functions, graphs).</p>
+          </div>
+          <div class="phase phase--4">
+            <span class="step" aria-hidden="true">4</span>
+            <h3 class="icon-head"><span class="icon" aria-hidden="true">🧮</span><span>Working mathematically</span></h3>
+            <p>Achieving the correct mathematical solution by solving the constructed models.</p>
+          </div>
+          <div class="phase phase--5">
+            <span class="step" aria-hidden="true">5</span>
+            <h3 class="icon-head"><span class="icon" aria-hidden="true">🌍</span><span>Interpreting</span></h3>
+            <p>Interpreting the obtained mathematical solution in a real-life context.</p>
+          </div>
+          <div class="phase phase--6">
+            <span class="step" aria-hidden="true">6</span>
+            <h3 class="icon-head"><span class="icon" aria-hidden="true">✅</span><span>Validating</span></h3>
+            <p>Validating and correcting any mistakes.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 2: Talk to an AI tutor -->
+      <section class="card">
+        <h2 class="icon-head"><span class="icon" aria-hidden="true">🗣️</span><span>Talk to an AI tutor to deepen your mathematical modeling skills</span></h2>
+        <h3 class="icon-head"><span class="icon" aria-hidden="true">💬</span><span>How to talk to an AI tutor</span></h3>
+        <ul>
+          <li>Ask open-ended questions and share your reasoning.</li>
+          <li>Use multiple representations (diagram, table, equation).</li>
+          <li>Ask for feedback and next steps.</li>
+        </ul>
+        <p class="hint"><strong>Tip:</strong> enable <em>Speech-to-Text</em> in your Dify app so a microphone icon appears in the chat input for voice <em>input</em>. This page stays fully static.</p>
+      </section>
+
+      <!-- Section 3A: AI Agent (Dify iframe) -->
+      <section class="card" id="ai-agent">
+        <h2 class="icon-head"><span class="icon" aria-hidden="true">🤖</span><span>AI Agent for Mathematical Modeling</span></h2>
+        <div class="widget-frame">
+          <!-- Dify chatbot iframe -->
+          <iframe
+            src="https://udify.app/chatbot/hmiSiym0AdrtAYhs"
+            style="width: 100%; height: 100%; min-height: 700px"
+            frameborder="0"
+            allow="microphone; clipboard-read; clipboard-write">
+          </iframe>
+        </div>
+        <p class="hint">Because the Dify chat runs inside an iframe (different origin), this page cannot read replies automatically.
+          Use the <em>Read-Aloud</em> box below to speak any text you paste.</p>
+      </section>
+
+      <!-- Section 3B: Read-Aloud (browser TTS) -->
+      <section class="card">
+        <h2 class="icon-head"><span class="icon" aria-hidden="true">🔊</span><span>Read Aloud (no account needed)</span></h2>
+        <p>Copy any AI reply (or your own text) and click <strong>Play</strong>. Works entirely in the browser with built-in speech synthesis.</p>
+
+        <textarea id="ttsText" class="tts-textarea" placeholder="Paste text here, then press Play."></textarea>
+
+        <div class="tts-controls">
+          <button id="pasteSpeak">📋 Paste & Play</button>
+          <button id="playBtn">▶️ Play</button>
+          <button id="pauseBtn" class="secondary">⏸️ Pause</button>
+          <button id="resumeBtn" class="secondary">▶️ Resume</button>
+          <button id="stopBtn" class="secondary">⏹️ Stop</button>
+          <label>Rate <input id="rate" type="range" min="0.5" max="1.75" step="0.05" value="1" /></label>
+          <label>Pitch <input id="pitch" type="range" min="0" max="2" step="0.1" value="1" /></label>
+          <label>Voice
+            <select id="voiceSelect"></select>
+          </label>
+        </div>
+        <p class="hint">Tip: The <em>Paste & Play</em> button uses the Clipboard API—works on HTTPS and most modern browsers. If blocked, paste manually, then press <strong>Play</strong>.</p>
+      </section>
+
+      <!-- Section 4: Scenarios -->
+      <section class="card">
+        <h2 class="icon-head"><span class="icon" aria-hidden="true">🧩</span><span>Mathematical Modeling Scenarios</span></h2>
+        <p>Explore these examples to practice applying mathematical modeling in real-world contexts:</p>
+        <div class="scenarios">
+          <div class="scenario scenario--dog">
+            <h3 class="icon-head"><span class="icon" aria-hidden="true">🐶</span><span>Designing a Dog Park</span></h3>
+            <p>Model space, costs, and community impact.</p>
+          </div>
+          <div class="scenario scenario--garden">
+            <h3 class="icon-head"><span class="icon" aria-hidden="true">🌱</span><span>Planning a Community Garden</span></h3>
+            <p>Explore growth cycles, layout, and yield.</p>
+          </div>
+          <div class="scenario scenario--library">
+            <h3 class="icon-head"><span class="icon" aria-hidden="true">📚</span><span>Allocating Resources for Free Libraries</span></h3>
+            <p>Optimize placement and equitable access.</p>
+          </div>
+          <div class="scenario scenario--traffic">
+            <h3 class="icon-head"><span class="icon" aria-hidden="true">🚗</span><span>Modeling Traffic Flow</span></h3>
+            <p>Investigate congestion patterns and commute time.</p>
+          </div>
+        </div>
+      </section>
+
+    </div>
+    <footer class="site-footer"><div class="container"><p>FlavinEducationLab</p></div></footer>
+  </main>
+
+  <script>
+    // ===== Read-Aloud using the Web Speech API (no backend, no keys) =====
+    const synth = window.speechSynthesis;
+    const ttsText = document.getElementById('ttsText');
+    const voiceSelect = document.getElementById('voiceSelect');
+    const rate = document.getElementById('rate');
+    const pitch = document.getElementById('pitch');
+    const playBtn = document.getElementById('playBtn');
+    const pauseBtn = document.getElementById('pauseBtn');
+    const resumeBtn = document.getElementById('resumeBtn');
+    const stopBtn = document.getElementById('stopBtn');
+    const pasteSpeak = document.getElementById('pasteSpeak');
+
+    let voices = [];
+    function loadVoices(){
+      voices = synth.getVoices().sort((a,b)=>a.name.localeCompare(b.name));
+      voiceSelect.innerHTML = voices.map((v,i)=>`<option value="${i}">${v.name} (${v.lang})</option>`).join('');
+    }
+    loadVoices();
+    if(typeof speechSynthesis!== 'undefined' && speechSynthesis.onvoiceschanged!== undefined){
+      speechSynthesis.onvoiceschanged = loadVoices;
+    }
+
+    function speak(text){
+      const content = (text ?? ttsText.value).trim();
+      if(!content) return;
+      if(synth.speaking) synth.cancel();
+      const utter = new SpeechSynthesisUtterance(content);
+      if(voices.length) utter.voice = voices[voiceSelect.value || 0];
+      utter.rate = parseFloat(rate.value);
+      utter.pitch = parseFloat(pitch.value);
+      synth.speak(utter);
+    }
+
+    playBtn?.addEventListener('click', ()=>speak());
+    pauseBtn?.addEventListener('click', ()=>synth.pause());
+    resumeBtn?.addEventListener('click', ()=>synth.resume());
+    stopBtn?.addEventListener('click', ()=>synth.cancel());
+
+    pasteSpeak?.addEventListener('click', async ()=>{
+      try{
+        const text = await navigator.clipboard.readText();
+        if(text){ ttsText.value = text; speak(text); }
+        else { alert('Clipboard is empty or permission denied. Paste manually and press Play.'); }
+      }catch(e){
+        alert('Clipboard permission blocked. Paste manually, then press Play.');
+      }
+    });
+  </script>
+</body>
+</html>
