@@ -9,7 +9,7 @@ author_profile: true
 {% endif %}
 
 {% if author.googlescholar %}
-  You can also find my articles on <a href="{{author.googlescholar}}">Google Scholar</a>.
+  Below is a selected list of my articles. You can find these articles on <a href="{{author.googlescholar}}">Google Scholar</a>. A complete list of my published work is available in my CV.
 {% endif %}
 
 {% include base_path %}
